@@ -3,7 +3,9 @@ import './App.css';
 import Carousel from './components/Carousel';
 import Jumbotron from './components/Jumbotron';
 import Menu from './components/Menu';
-
+import Footer from './components/Footer';
+import ComingSoon from './components/ComingSoon';
+import {Routes, Route} from 'react-router-dom'
 function App() {
 
   let [menuItems, setMenuItems] = useState([]);
@@ -20,13 +22,38 @@ function App() {
     fetchData();
   }, []);
 
-  return (
+  const renderPage = (path) =>{
+    if(path ==='/soon'){
+      return<ComingSoon/>
+    }
+
+
+
+return (
+
     <div className='container-fluid'>
-      <Jumbotron/>
+     
+     <Jumbotron/>
       <Carousel/>
       <Menu items={menuItems}/>
+
+
+    
     </div>
+    
   );
+}
+ 
+return (
+  <div className="container-fluid">
+    <Routes>
+      <Route path="/" element={renderPage("/")} />
+      <Route path="/soon" element={renderPage("/soon")}/>
+    </Routes>
+
+    <Footer />
+  </div>
+);
 }
 
 export default App;
