@@ -3,6 +3,10 @@ import './App.css';
 import Carousel from './components/Carousel';
 import Jumbotron from './components/Jumbotron';
 import Menu from './components/Menu';
+import Media from 'react-media';
+import Header from './components/Header';
+import MdHeader from './components/MdHeader'
+
 
 function App() {
 
@@ -22,9 +26,19 @@ function App() {
 
   return (
     <div className='container-fluid'>
+       <Media query={{ maxWidth: 599 }}>
+          {matches =>
+            matches ? (
+             <MdHeader/>
+            ) : (
+              <Header/>
+            )
+          }
+        </Media>
       <Jumbotron/>
       <Carousel/>
       <Menu items={menuItems}/>
+     
     </div>
   );
 }
