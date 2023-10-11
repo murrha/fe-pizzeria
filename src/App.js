@@ -3,6 +3,7 @@ import './App.css';
 import Carousel from './components/Carousel';
 import Jumbotron from './components/Jumbotron';
 import Menu from './components/Menu';
+import ProductDetails from './components/ProductDetails';
 
 function App() {
 
@@ -25,6 +26,8 @@ function App() {
       <Jumbotron/>
       <Carousel/>
       <Menu items={menuItems}/>
+
+      <ProductDetails/>
     </div>
   );
 }
