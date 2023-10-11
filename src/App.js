@@ -25,6 +25,7 @@ function App() {
       <Jumbotron/>
       <Carousel/>
       <Menu items={menuItems}/>
+
     </div>
   );
 }
