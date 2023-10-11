@@ -1,31 +1,13 @@
-import { useState, useEffect } from 'react';
-import './App.css';
-import Carousel from './components/Carousel';
-import Jumbotron from './components/Jumbotron';
-import Menu from './components/Menu';
+import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import Homepage from "./components/Homepage";
 
 function App() {
-
-  let [menuItems, setMenuItems] = useState([]);
-
-  useEffect(() => {  
-    const fetchData = async () => {
-      let response = await fetch('/json/menuItems.json');
-      let data = await response.json();
-  
-      setMenuItems(data); 
-    };
-   
-    console.log("Inside useEffect, App.js")
-    fetchData();
-  }, []);
-
   return (
-    <div className='container-fluid'>
-      <Jumbotron/>
-      <Carousel/>
-      <Menu items={menuItems}/>
-
+    <div className="container-fluid">
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+      </Routes>
     </div>
   );
 }
