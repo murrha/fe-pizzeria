@@ -4,7 +4,7 @@ const HeadOffCanvas = () => {
   
     return ( 
       <>
-        <div className="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbarLight" aria-labelledby="offcanvasNavbarLightLabel">
+        <div className="offcanvas offcanvas-start fw-semibold" tabindex="-1" id="offcanvasNavbarLight" aria-labelledby="offcanvasNavbarLightLabel">
           <div className="offcanvas-header py-4">
             <button type="button" className="btn-close offcanvas-title" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
