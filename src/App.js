@@ -6,6 +6,13 @@ import Menu from './components/Menu';
 import Footer from './components/Footer';
 import ComingSoon from './components/ComingSoon';
 import {Routes, Route} from 'react-router-dom'
+import About from './components/About';
+import Contact from './components/Contact';
+import FAQ from './components/FAQ';
+import Location from './components/Location';
+import TermsPage from './components/TermsPage';
+import PageNotFound from './components/PageNotFound';
+import Homepage from './components/Homepage';
 function App() {
 
   let [menuItems, setMenuItems] = useState([]);
@@ -21,34 +28,23 @@ function App() {
     console.log("Inside useEffect, App.js")
     fetchData();
   }, []);
+  
 
-  const renderPage = (path) =>{
-    if(path ==='/soon'){
-      return<ComingSoon/>
-    }
-
-
-
-return (
-
-    <div className='container-fluid'>
-     
-     <Jumbotron/>
-      <Carousel/>
-      <Menu items={menuItems}/>
-
-
-    
-    </div>
-    
-  );
-}
  
 return (
   <div className="container-fluid">
+
     <Routes>
-      <Route path="/" element={renderPage("/")} />
-      <Route path="/soon" element={renderPage("/soon")}/>
+ 
+
+      <Route path="/" element={<Homepage/>} />
+      <Route path="about" element={<About/>}/>
+      <Route path="contact" element={<Contact/>}/>
+      <Route path="faq" element={<FAQ/>}/>
+      <Route path="location" element={<Location/>}/>
+      <Route path="terms" element={<TermsPage/>}/>
+      <Route path="*"  element={<PageNotFound/>}/> 
+
     </Routes>
 
     <Footer />

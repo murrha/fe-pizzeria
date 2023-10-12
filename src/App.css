@@ -1,0 +1,8 @@
+.homepage-link { 
+    color: #f60;
+    text-decoration: none;
+  }
+  
+  .homepage-link:hover {
+    color: rgb(219, 59, 59);
+  }
