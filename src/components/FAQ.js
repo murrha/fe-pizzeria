@@ -1,10 +1,10 @@
 const FAQ = () => {
-    return (    <div className="container mt-3">
+    return (    <div className="container mt-3 ">
     <div className="accordion " id="accordionExample">
     <h3 className="text-center">Frequently Asked Questions:</h3>
         <div className="accordion-item">
           <h2 className="accordion-header" id="headingOne">
-            <button className="accordion-button text-primary bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+            <button className="accordion-button text-dark bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
             01. How can I order online?
             </button>
           </h2>
@@ -16,7 +16,7 @@ const FAQ = () => {
         </div>
         <div className="accordion-item">
           <h2 className="accordion-header" id="headingTwo">
-            <button className="accordion-button collapsed text-primary bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            <button className="accordion-button collapsed text-dark bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                 02. When is your delivery cut-off time?
             </button>
           </h2>
@@ -28,7 +28,7 @@ const FAQ = () => {
         </div>
         <div className="accordion-item">
           <h2 className="accordion-header" id="headingThree">
-            <button className="accordion-button collapsed text-primary bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            <button className="accordion-button collapsed text-dark bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                 03. What are your hours of operation?
             </button>
           </h2>
@@ -40,7 +40,7 @@ const FAQ = () => {
         </div>
         <div className="accordion-item">
           <h2 className="accordion-header" id="headingFour">
-            <button className="accordion-button text-primary bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+            <button className="accordion-button text-dark bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
              04. Where can I find your restaurant?
             </button>
           </h2>
@@ -52,7 +52,7 @@ const FAQ = () => {
         </div>
         <div className="accordion-item">
           <h2 className="accordion-header" id="headingFive">
-            <button className="accordion-button text-primary bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+            <button className="accordion-button text-dark bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
              05. Can I pay in Bitcoin?
             </button>
           </h2>
@@ -64,7 +64,7 @@ const FAQ = () => {
         </div>
         <div className="accordion-item">
           <h2 className="accordion-header" id="headingSix">
-            <button className="accordion-button text-primary bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+            <button className="accordion-button text-dark bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
              06.Do you offer gluten-free pizza?
             </button>
           </h2>
@@ -76,7 +76,7 @@ const FAQ = () => {
         </div>
         <div className="accordion-item">
           <h2 className="accordion-header" id="headingSeven">
-            <button className="accordion-button text-primary bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+            <button className="accordion-button text-dark bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
              07. Do I need to create an account to make purchases?
             </button>
           </h2>
@@ -88,7 +88,7 @@ const FAQ = () => {
         </div>
         <div className="accordion-item">
           <h2 className="accordion-header" id="headingEight">
-            <button className="accordion-button text-primary bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+            <button className="accordion-button text-dark bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
              08. What payment methods do you accept?
             </button>
           </h2>
@@ -100,7 +100,7 @@ const FAQ = () => {
         </div>
         <div className="accordion-item">
           <h2 className="accordion-header" id="headingNine">
-            <button className="accordion-button text-primary bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+            <button className="accordion-button text-dark bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
              09. How much does shipping cost?
             </button>
           </h2>
@@ -112,7 +112,7 @@ const FAQ = () => {
         </div>
         <div className="accordion-item">
           <h2 className="accordion-header" id="headingTen">
-            <button className="accordion-button text-primary bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+            <button className="accordion-button text-dark bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
              10. Do you have any specials or promotions?
             </button>
           </h2>
