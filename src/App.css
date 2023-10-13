@@ -1,3 +1,11 @@
+.homepage-link { 
+    color: #f60;
+    text-decoration: none;
+  }
+  
+  .homepage-link:hover {
+    color: rgb(219, 59, 59);
+  }
 .navbar-link:hover,
 .nav-button:hover {
   margin-bottom: 5px;
