@@ -8,7 +8,7 @@ const ListFormat = (props) => {
                 <div className="scrollMenu">
                 {props.foodList.filter(item=>item.tag===tag).map(filterPro=> (
                 <div key={filterPro.id} className="cardProduct card  rounded-0 border-light-subtle" style={{"width":"15rem"}}>
-                <img src={filterPro.image} className="card-img-top rounded-0" alt="..."/>
+                <img src={filterPro.image} className="card-img-top rounded-0" alt={filterPro.name}/>
                 
                 <div className="card-body">
                     <p className="card-text fw-bold mb-1">{filterPro.name}</p>

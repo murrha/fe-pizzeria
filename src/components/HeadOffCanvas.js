@@ -15,7 +15,7 @@ const HeadOffCanvas = () => {
               <i className="bi bi-house-door-fill me-2"></i>Home</Link>
               </li>
               <li className="nav-item">
-              <Link to='/' className="p-3 border-bottom nav-link"  style={{color:"rgb(25, 25, 25)"}}>
+              <Link to='/menu' className="p-3 border-bottom nav-link"  style={{color:"rgb(25, 25, 25)"}}>
               <i className="bi bi-list me-2"></i>Menu</Link>
               </li>
               <li className="nav-item p-3 border-bottom"  >
