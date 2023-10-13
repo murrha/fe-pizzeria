@@ -3,7 +3,7 @@ const ComingSoon = () => {
     return (
       <div className="container">
         <div className="py-5 text-center">
-          <img src="img/footer/soon.png" height="700px" alt="Stay tuned" />
+          <img src="img/coming-soon/soon.png" height="700px" alt="Stay tuned" />
         </div>
         <div className="text-center text-warning">
           <h1><i>Stay tuned.</i></h1>

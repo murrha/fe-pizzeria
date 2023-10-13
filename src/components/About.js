@@ -6,12 +6,12 @@ const About = () => {
         <>
 
   
-    <div className="container mt-5 lead">
+    <div className="container mt-2 lead">
   <div className="row">
-  <img src="img/footer/welcome.png" height="200px" alt="pizza"/>
+  <img src="img/about/welcome.png" height="200px" alt="pizza"/>
   </div>
 
-    <div className="row">
+    <div className="row mt-5">
         <div className="col-md-6">
             <h2>Our Story</h2>
             <p>
@@ -43,7 +43,7 @@ const About = () => {
         </p>
         <p>
         We hope you'll stop by to grab a slice, enjoy our tech-inspired atmosphere, and sample some of the best pizza in town!
-         The laptop bar is always open for coders and pizza lovers alike. Our website and app aslo make it simple to get delicious pizza on demand fast. Just a few clicks and we’ll deliver piping hot pizza to your door!
+         The laptop bar is always open for coders and pizza lovers alike. Our website also makes it simple to get delicious pizza on demand fast. Just a few clicks and we’ll deliver hot pizza to your door!
         </p>
         <Link name="order button" id="order" class="btn btn-success fw-bold btn-lg btn-warning text-dark" to="/" role="button">Order Now</Link>
     </div>

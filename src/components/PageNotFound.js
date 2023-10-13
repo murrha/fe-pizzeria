@@ -5,7 +5,7 @@ const PageNotFound = () => {
     return (
         <div className="container-fluid">
         <div className="text-center">
-        <img src="img/footer/404.png" width="500" alt="404"/>  
+        <img src="img/404/404.png" width="500" alt="404"/>  
         </div>
 
         <div className="text-center">

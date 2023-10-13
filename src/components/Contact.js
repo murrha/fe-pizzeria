@@ -8,7 +8,7 @@ const Contact = () => {
 
     <div className="col-md-4">
 
-      <img src="img/footer/getintouch.png" height="200px" alt="pizza"/>
+      <img src="img/contact/getintouch.png" height="200px" alt="pizza"/>
 
     </div>
 

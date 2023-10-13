@@ -10,7 +10,7 @@ const FAQ = () => {
           </h2>
           <div id="collapseOne" className="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
             <div className="accordion-body">
-                <p>You can order directly on our website or through our mobile app. Simply browse the menu, customize your items, and check out securely online. </p>
+                <p>You can order directly on our website. Simply browse the menu, customize your items, and check out securely online. </p>
             </div>
           </div>
         </div>
@@ -58,19 +58,20 @@ const FAQ = () => {
           </h2>
           <div id="collapseFive" className="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
             <div className="accordion-body">
-                <p>Unfortunately, we do not accept Bitcoin at this time.</p>
+                <p>Unfortunately, we do not accept at this time.</p>
             </div>
           </div>
         </div>
         <div className="accordion-item">
           <h2 className="accordion-header" id="headingSix">
             <button className="accordion-button text-dark bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-             06.Do you offer gluten-free pizza?
+             06. What payment methods do you accept?
             </button>
           </h2>
           <div id="collapseSix" className="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
             <div className="accordion-body">
-                <p>Yes, we offer a variety of gluten-free and vegan pizzas. Just let us know of your dietary restrictions when you order. </p>
+            <p>We accept Visa, Mastercard, American Express, Discover. Payment is processed at the time the order is placed. </p>
+               
             </div>
           </div>
         </div>
@@ -89,24 +90,24 @@ const FAQ = () => {
         <div className="accordion-item">
           <h2 className="accordion-header" id="headingEight">
             <button className="accordion-button text-dark bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
-             08. What payment methods do you accept?
+             08. Do you offer gluten-free pizza?
             </button>
           </h2>
           <div id="collapseEight" className="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#accordionExample">
             <div className="accordion-body">
-                <p>We accept Visa, Mastercard, American Express, Discover, PayPal and Amazon Pay. Payment is processed at the time the order is placed. </p>
+            <p>Yes, we offer a variety of gluten-free and vegan pizzas. Just let us know of your dietary restrictions when you order. </p>
             </div>
           </div>
         </div>
         <div className="accordion-item">
           <h2 className="accordion-header" id="headingNine">
             <button className="accordion-button text-dark bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
-             09. How much does shipping cost?
+             09. How much does delivery cost?
             </button>
           </h2>
           <div id="collapseNine" className="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#accordionExample">
             <div className="accordion-body">
-                <p>Standard shipping on all orders is $5.99. We also offer free shipping on orders over $30. </p>
+                <p>Standard delivery on all orders is $5.99. We also offer free delivery on orders over $30. </p>
             </div>
           </div>
         </div>
