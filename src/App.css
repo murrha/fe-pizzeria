@@ -6,3 +6,19 @@
   .homepage-link:hover {
     color: rgb(219, 59, 59);
   }
+.navbar-link:hover,
+.nav-button:hover {
+  margin-bottom: 5px;
+}
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+.nav-link:active {
+  margin-top: 2px !important;
+}
+.signInSideMenu {
+  cursor: pointer;
+}
+.nav-item:hover {
+  background-color: rgb(247, 247, 247);
+}

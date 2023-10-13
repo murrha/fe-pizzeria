@@ -1,10 +1,6 @@
 import { useState, useEffect } from 'react';
 import './App.css';
-import Carousel from './components/Carousel';
-import Jumbotron from './components/Jumbotron';
-import Menu from './components/Menu';
 import Footer from './components/Footer';
-import ComingSoon from './components/ComingSoon';
 import {Routes, Route} from 'react-router-dom'
 import About from './components/About';
 import Contact from './components/Contact';
@@ -12,7 +8,10 @@ import FAQ from './components/FAQ';
 import Location from './components/Location';
 import TermsPage from './components/TermsPage';
 import PageNotFound from './components/PageNotFound';
-import Homepage from './components/Homepage';
+import Homepage from "./components/Homepage";
+import Media from 'react-media';
+import Header from './components/Header';
+import MdHeader from './components/MdHeader'
 function App() {
 
   let [menuItems, setMenuItems] = useState([]);
@@ -33,7 +32,15 @@ function App() {
  
 return (
   <div className="container-fluid">
-
+<Media query={{ maxWidth: 599 }}>
+          {matches =>
+            matches ? (
+             <MdHeader/>
+            ) : (
+              <Header/>
+            )
+          }
+        </Media>
     <Routes>
  
 
@@ -50,6 +57,9 @@ return (
     <Footer />
   </div>
 );
+
+
+
 }
 
 export default App;
