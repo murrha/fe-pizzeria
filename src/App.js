@@ -11,6 +11,7 @@ import Homepage from "./components/Homepage";
 import Media from "react-media";
 import Header from "./components/Header";
 import MdHeader from "./components/MdHeader";
+import ProductDetails from "./components/ProductDetails";
 function App() {
   return (
     <div className="container-fluid">
@@ -23,9 +24,12 @@ function App() {
         <Route path="contact" element={<Contact />} />
         <Route path="faq" element={<FAQ />} />
         <Route path="location" element={<Location />} />
+        {/* <Route path="menu/item/:id" element={<ProductDetails products={}/>}/> */}
         <Route path="terms" element={<TermsPage />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
+
+      <ProductDetails/>
 
       <Footer />
     </div>
