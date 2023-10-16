@@ -12,7 +12,7 @@ let activeHandler=(e)=>{
 
   return (
     <div id='scrollTag' className="scrollTag sticky-top bg-white fw-semibold fs-5 d-flex justify-content-lg-center">
-
+      
       <a className="scrollItem" href="#pizzas" onClick={activeHandler}>
         PIZZAS
       </a>

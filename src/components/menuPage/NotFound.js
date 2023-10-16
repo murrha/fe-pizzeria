@@ -8,7 +8,7 @@ const NotFound = () => {
     return ( 
         <div className="mx-3 mt-4">
         <h1>Item Not Found!</h1>
-        <button className="btn btn-primary mt-3" onClick={clickHandler}>Return to Main Menu</button>
+        <button className="btn btn-warning mt-3 fw-semibold" onClick={clickHandler}>Menu Listings</button>
         </div>
      );
 }
