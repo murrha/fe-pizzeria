@@ -9,6 +9,8 @@ const Contact = () => {
     <div className="col-md-4">
 
       <img src="img/contact/getintouch.png" height="200px" alt="pizza"/>
+      <h4>Business Phone Number</h4>
+      <h5><i>510-123-1234</i></h5>
 
     </div>
 

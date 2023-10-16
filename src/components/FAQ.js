@@ -107,7 +107,7 @@ const FAQ = () => {
           </h2>
           <div id="collapseNine" className="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#accordionExample">
             <div className="accordion-body">
-                <p>Standard delivery on all orders is $5.99. We also offer free delivery on orders over $30. </p>
+                <p>Standard delivery is $5.99 within 15 miles of our pizza location. For orders outside of the 15-mile radius, pickup is only available. </p>
             </div>
           </div>
         </div>

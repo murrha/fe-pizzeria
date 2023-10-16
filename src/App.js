@@ -12,6 +12,7 @@ import Homepage from "./components/Homepage";
 import Media from 'react-media';
 import Header from './components/Header';
 import MdHeader from './components/MdHeader'
+import ComingSoon from './components/ComingSoon';
 function App() {
 
   let [menuItems, setMenuItems] = useState([]);
@@ -51,6 +52,7 @@ return (
       <Route path="location" element={<Location/>}/>
       <Route path="terms" element={<TermsPage/>}/>
       <Route path="*"  element={<PageNotFound/>}/> 
+      <Route path="soon"  element={<ComingSoon/>}/> 
 
     </Routes>
 
