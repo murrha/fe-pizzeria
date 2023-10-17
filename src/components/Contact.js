@@ -15,23 +15,27 @@ const Contact = () => {
     </div>
 
     <div className="col-md-8">
-      <form>
-        <div className="">
+      <form action="https://formsubmit.co/danachen789@gmail.com" method="POST">
+      <input type="hidden" name="_captcha" value="false"/>
+
+   
           <label>Name</label>
-          <input className="form-control" />  
-        </div>
+          <input type="name" name="name" className="form-control" placeholder="Your Name" required/>  
+ 
 
         <div className="form-group">
           <label>Email</label>
-          <input type="email" className="form-control"/>
+          <input type="email" name="email" className="form-control" placeholder="Email Address" required/>
         </div>
 
         <div className="form-group">
           <label>Message</label>
-          <textarea className="form-control"></textarea>
+          <textarea type="text" name="text" className="form-control" placeholder="Write your message here" required></textarea>
         </div>
 
-        <button className="btn btn-success fw-bold btn-warning text-dark mt-3">Submit</button>
+        <button className="btn btn-success fw-bold btn-warning text-dark mt-3" type="submit">Submit</button>
+
+        <input type="hidden" name="_next" value="http://localhost:3000/thanks"></input>
        
       </form>
 

@@ -13,6 +13,7 @@ import Media from 'react-media';
 import Header from './components/Header';
 import MdHeader from './components/MdHeader'
 import ComingSoon from './components/ComingSoon';
+import ThankYouContact from './components/ThankYouContact';
 function App() {
 
   let [menuItems, setMenuItems] = useState([]);
@@ -53,6 +54,7 @@ return (
       <Route path="terms" element={<TermsPage/>}/>
       <Route path="*"  element={<PageNotFound/>}/> 
       <Route path="soon"  element={<ComingSoon/>}/> 
+      <Route path="thanks"  element={<ThankYouContact/>}/> 
 
     </Routes>
 
