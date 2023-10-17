@@ -56,6 +56,7 @@ const SearchBar = (props) => {
           placeholder="Search in Menu"
           aria-label="search"
           aria-describedby="basic-addon1" readOnly={props.readOnly}
+          required
         />
          <button className="btn p-0 cancelBtn" onClick={cancelHandler}>
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-x-circle-fill" viewBox="0 0 16 16">
