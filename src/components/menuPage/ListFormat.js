@@ -1,4 +1,3 @@
-
 const ListFormat = (props) => {
     return ( 
         props.tagArr
@@ -19,7 +18,7 @@ const ListFormat = (props) => {
                     <p className="card-text text-body fw-semibold d-inline mb-0">{filterPro.price}</p>   
                 </div>
                 </div>
-                
+               
                 </div>
                ))}
  </div>
