@@ -45,7 +45,7 @@ const Footer = () => {
 
     <div className="col-sm-3 ">
     <Link to="/">
-      <img src="logo.png" className="me-auto logo" width="150px" alt="logo"/>
+      <img src="/logo.png" className="me-auto logo" width="150px" alt="logo"/>
     </Link>
     </div>
 </div>
