@@ -14,7 +14,7 @@ const MdHeader = () => {
         </button>
        
         <Link to='/' className="mx-2 ">
-                <img src="./logo.jpg" alt='logo' width='130px'></img>
+                <img src="/logo.jpg" alt='logo' width='130px'></img>
             </Link>
             <button className="btn btn-danger me-3 rounded-pill fw-bold position-relative" type="button" data-bs-toggle="offcanvas" data-bs-target="#cart" aria-controls="cart">
             <i className="bi bi-cart-fill me-1"></i>
@@ -23,11 +23,12 @@ const MdHeader = () => {
                 <span className="visually-hidden">cart's items amount</span>
             </span>
             </button>   
-        <HeadOffCanvas/>
-        <CartOffCanvas/>
+        
         
       </div>
     </nav>
+    <HeadOffCanvas/>
+    <CartOffCanvas/>
     
     </>
      );
