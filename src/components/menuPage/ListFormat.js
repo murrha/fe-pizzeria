@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 const ListFormat = (props) => {
     return ( 
         props.tagArr
@@ -9,7 +10,7 @@ const ListFormat = (props) => {
                 {props.foodList.filter(item=>item.tag===tag).map(filterPro=> (
                
                 <div key={filterPro.id} className="cardProduct card  rounded-0 border-light-subtle" style={{"width":"15rem"}}>
-                 
+                  <Link to={`/menu/item/${filterPro.id}`} className="text-decoration-none text-dark">
                 <img src={filterPro.image} className="card-img-top rounded-0" alt={filterPro.name}/>
                 
                 <div className="card-body">
@@ -18,7 +19,7 @@ const ListFormat = (props) => {
                     <p className="card-text text-body fw-semibold d-inline mb-0">{filterPro.price}</p>   
                 </div>
                 </div>
-               
+               </Link>
                 </div>
                ))}
  </div>
