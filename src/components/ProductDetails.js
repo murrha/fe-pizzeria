@@ -21,9 +21,13 @@ const ProductDetails = (props) => {
                         <h4 className="card-title">{props.food.name}</h4>
                         <h5>{props.food.price}</h5>
                         <p className="card-text">{props.food.description}</p>
-                        <button className="btn btn-success" onClick={() => setCount(count -1)}>-</button>
-                        <span>{count}</span>
-                        <button className="btn btn-success" onClick={() => setCount(count + 1)}>+</button>
+
+                        <div class="input-group input-group-sm mb-3">
+                            {count <= 1 ? <button class="btn btn-outline-secondary disabled">-</button> : <button class="btn btn-outline-secondary" onClick={() => setCount(count -1)}>-</button>}
+                            <input value={count}/>
+                            <button class="btn btn-outline-secondary" onClick={() => setCount(count + 1)}>+</button>
+                        </div>
+                        
                         <button className="btn btn-success">Add to Cart</button>
                     </div>
                 </div>
@@ -34,4 +38,5 @@ const ProductDetails = (props) => {
 }
  
 export default ProductDetails;
+
 
