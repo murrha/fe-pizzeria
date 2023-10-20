@@ -8,7 +8,7 @@ const Location = () => {
 
           <div className="mb-3">
           <h1>Our Location</h1>
-          <p>We are located at <u>123 Main Street, Anytown, CA 95131.</u></p>
+          <p>We are located at <u>123 Main Street, San Jose, CA 95131.</u></p>
   
           <span><b>Opening Hours:</b></span> <span>Monday to Sunday: 11am - 11pm</span>
           </div>

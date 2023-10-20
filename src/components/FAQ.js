@@ -46,7 +46,7 @@ const FAQ = () => {
           </h2>
           <div id="collapseFour" className="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
             <div className="accordion-body">
-                <p>Our restaurant is located at 123 Main Street, Anytown, CA 95131. </p>
+                <p>Our restaurant is located at 123 Main Street, San Jose, CA 95131. </p>
             </div>
           </div>
         </div>
