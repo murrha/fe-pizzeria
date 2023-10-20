@@ -16,7 +16,26 @@ import Media from "react-media";
 import Header from "./components/Header";
 import MdHeader from "./components/MdHeader";
 import Signup from "./components/Signup";
+import { useEffect, useState } from "react";
+import SelectedProduct from "./components/SelectedProduct";
+
 function App() {
+
+  let [foodData,setFoodData] = useState()
+
+    useEffect(() => {
+        const getAllProducts = async ()=>{
+        let resp =  await fetch('./json/products.json');
+        let data = await resp.json();
+        setFoodData(data);    
+        };
+        getAllProducts();
+
+        
+    },[]);
+
+    //console.log(foodData);
+  
   return (
     <div className="container-fluid">
       <Media query={{ maxWidth: 599 }}>
@@ -31,11 +50,14 @@ function App() {
         <Route path="contact" element={<Contact />} />
         <Route path="faq" element={<FAQ />} />
         <Route path="location" element={<Location />} />
+        <Route path="menu/item/:id" element={<SelectedProduct foodInfo={foodData}/>}/>
         <Route path="terms" element={<TermsPage />} />
         <Route path="*" element={<PageNotFound />} />
         <Route path='/signup' element={<Signup/>}></Route>
 
       </Routes>
+
+  
 
       <Footer />
     </div>
