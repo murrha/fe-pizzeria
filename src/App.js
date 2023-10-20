@@ -15,6 +15,7 @@ import NotFound from './components/menuPage/NotFound';
 import Media from "react-media";
 import Header from "./components/Header";
 import MdHeader from "./components/MdHeader";
+import Signup from "./components/Signup";
 function App() {
   return (
     <div className="container-fluid">
@@ -32,6 +33,8 @@ function App() {
         <Route path="location" element={<Location />} />
         <Route path="terms" element={<TermsPage />} />
         <Route path="*" element={<PageNotFound />} />
+        <Route path='/signup' element={<Signup/>}></Route>
+
       </Routes>
 
       <Footer />
