@@ -22,13 +22,13 @@ const ProductDetails = (props) => {
                         <h5>{props.food.price}</h5>
                         <p className="card-text">{props.food.description}</p>
 
-                        <div class="input-group input-group-sm mb-3">
-                            {count <= 1 ? <button class="btn btn-outline-secondary disabled">-</button> : <button class="btn btn-outline-secondary" onClick={() => setCount(count -1)}>-</button>}
-                            <input value={count}/>
-                            <button class="btn btn-outline-secondary" onClick={() => setCount(count + 1)}>+</button>
+                        <div className="input-group mb-3 mt-3">
+                            {count <= 1 ? <button className="btn btn-outline-secondary disabled px-2">-</button> : <button className="btn btn-secondary px-2" onClick={() => setCount(count -1)}>-</button>}
+                            <input className="text-center col-sm-3" value={count}/>
+                            <button className="btn btn-secondary px-2" onClick={() => setCount(count + 1)}>+</button>
                         </div>
                         
-                        <button className="btn btn-success">Add to Cart</button>
+                        <button className="btn btn-warning">Add to Cart</button>
                     </div>
                 </div>
             </div>
