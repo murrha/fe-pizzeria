@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Login from "./Login";
 
 const HeadOffCanvas = () => {
   
@@ -19,7 +20,7 @@ const HeadOffCanvas = () => {
               <i className="bi bi-list me-2"></i>Menu</Link>
               </li>
               <li className="nav-item p-3 border-bottom"  >
-              <span className="text-reset signInSideMenu"><i className="bi bi-person-fill me-1"></i>
+              <span className="text-reset signInSideMenu" data-bs-toggle="modal" data-bs-target="#loginModal"><i className="bi bi-person-fill me-1"></i>
                 Sign Up or Sign In
                 </span>
               </li>
@@ -28,6 +29,7 @@ const HeadOffCanvas = () => {
           </div>
          
         </div>
+        <Login/>
         
         </>
      );
