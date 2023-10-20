@@ -18,7 +18,7 @@ const ProductDetails = (props) => {
                 </div>
                 <div className="col-md-8">
                     <div className="card-body">
-                        <h4 className="card-title">{props.food.name}</h4>
+                        <h4 className="card-title mt-4">{props.food.name}</h4>
                         <h5>{props.food.price}</h5>
                         <p className="card-text">{props.food.description}</p>
 
