@@ -22,3 +22,24 @@
 .nav-item:hover {
   background-color: rgb(247, 247, 247);
 }
+
+.react-chatbot-kit-chat-container {
+    margin-left: 200px;
+    margin-bottom: 100px;
+    border: 1px solid #FFD3A3;
+    width: 200px;
+  
+}
+
+.react-chatbot-kit-chat-container.open {
+  width: 300px;
+  
+}
+
+.react-chatbot-kit-chat-container.minimized {
+  width: 50px; 
+}
+
+
+
+

@@ -14,6 +14,13 @@ import Header from './components/Header';
 import MdHeader from './components/MdHeader'
 import ComingSoon from './components/ComingSoon';
 import ThankYouContact from './components/ThankYouContact';
+import Chatbot from 'react-chatbot-kit'
+import 'react-chatbot-kit/build/main.css'
+import config from './components/bot/config.js';
+import MessageParser from './components/bot/MessageParser.js';
+import ActionProvider from './components/bot/ActionProvider.js';
+import ChatWindow from './components/bot/ChatWindow';
+ 
 function App() {
 
   let [menuItems, setMenuItems] = useState([]);
@@ -33,7 +40,9 @@ function App() {
 
  
 return (
+  
   <div className="container-fluid">
+  
 <Media query={{ maxWidth: 599 }}>
           {matches =>
             matches ? (
@@ -43,10 +52,12 @@ return (
             )
           }
         </Media>
+       
     <Routes>
  
-
+        
       <Route path="/" element={<Homepage/>} />
+      
       <Route path="about" element={<About/>}/>
       <Route path="contact" element={<Contact/>}/>
       <Route path="faq" element={<FAQ/>}/>
@@ -59,6 +70,15 @@ return (
     </Routes>
 
     <Footer />
+    <ChatWindow>
+    <Chatbot
+        config={config}
+        messageParser={MessageParser}
+        actionProvider={ActionProvider}
+      />
+
+ </ChatWindow>
+   
   </div>
 );
 

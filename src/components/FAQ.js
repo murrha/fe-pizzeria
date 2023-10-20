@@ -46,7 +46,7 @@ const FAQ = () => {
           </h2>
           <div id="collapseFour" className="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
             <div className="accordion-body">
-                <p>Our restaurant is located at 123 Main Street, Anytown, CA 12345. </p>
+                <p>Our restaurant is located at 123 Main Street, Anytown, CA 95131. </p>
             </div>
           </div>
         </div>
@@ -58,7 +58,7 @@ const FAQ = () => {
           </h2>
           <div id="collapseFive" className="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
             <div className="accordion-body">
-                <p>Unfortunately, we do not accept at this time.</p>
+                <p>Unfortunately, we do not accept it at this time.</p>
             </div>
           </div>
         </div>
@@ -70,7 +70,7 @@ const FAQ = () => {
           </h2>
           <div id="collapseSix" className="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
             <div className="accordion-body">
-            <p>We accept Visa, Mastercard, American Express, Discover. Payment is processed at the time the order is placed. </p>
+            <p> We only accept PayPal for now. Payment is processed at the time the order is placed. </p>
                
             </div>
           </div>
