@@ -15,26 +15,25 @@ import NotFound from './components/menuPage/NotFound';
 import Media from "react-media";
 import Header from "./components/Header";
 import MdHeader from "./components/MdHeader";
-import ProductDetails from "./components/ProductDetails";
 import { useEffect, useState } from "react";
+import SelectedProduct from "./components/SelectedProduct";
 
 function App() {
 
-  let [product, setProduct] = useState([]);
+  let [foodData,setFoodData] = useState()
 
-  useEffect(() => {
-    const fetchData = async () => {
-      let response = await fetch("/json/products.json");
-      let data = await response.json();
+    useEffect(() => {
+        const getAllProducts = async ()=>{
+        let resp =  await fetch('./json/products.json');
+        let data = await resp.json();
+        setFoodData(data);    
+        };
+        getAllProducts();
 
-      setProduct(data);
-    };
+        
+    },[]);
 
-    console.log("Inside useEffect, App.js");
-    fetchData();
-  }, []);
-
-
+    //console.log(foodData);
   
   return (
     <div className="container-fluid">
@@ -50,7 +49,7 @@ function App() {
         <Route path="contact" element={<Contact />} />
         <Route path="faq" element={<FAQ />} />
         <Route path="location" element={<Location />} />
-        <Route path="menu/item" element={<ProductDetails productInfo={product[0]}/>}/>
+        <Route path="menu/item/:id" element={<SelectedProduct foodInfo={foodData}/>}/>
         <Route path="terms" element={<TermsPage />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
