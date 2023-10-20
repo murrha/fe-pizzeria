@@ -15,6 +15,7 @@ import NotFound from './components/menuPage/NotFound';
 import Media from "react-media";
 import Header from "./components/Header";
 import MdHeader from "./components/MdHeader";
+import Signup from "./components/Signup";
 import { useEffect, useState } from "react";
 import SelectedProduct from "./components/SelectedProduct";
 
@@ -52,6 +53,8 @@ function App() {
         <Route path="menu/item/:id" element={<SelectedProduct foodInfo={foodData}/>}/>
         <Route path="terms" element={<TermsPage />} />
         <Route path="*" element={<PageNotFound />} />
+        <Route path='/signup' element={<Signup/>}></Route>
+
       </Routes>
 
   

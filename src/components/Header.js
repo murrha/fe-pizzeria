@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 import CartOffCanvas from "./CartOffCanvas";
-
+import Login from "./Login";
 const Header = () => {
   
     return ( <>
@@ -21,19 +21,22 @@ const Header = () => {
                 <span className="visually-hidden">cart's items amount</span>
             </span>
             </button>
-            <button type="button"  className="btn fw-bold rounded-pill border-0 mx-1 nav-button" >
+            <button type="button"  className="btn fw-bold rounded-pill border-0 mx-1 nav-button" data-bs-toggle="modal" data-bs-target="#loginModal">
             <i className="bi bi-person-fill me-1"></i>
                 Sign In
             </button>
-            <button  style={{color:"rgb(25, 25, 25)",backgroundColor:"rgb(214,214,214)"}} type="button" className="btn  btn-sm fw-bold rounded-pill border-0 nav-button"  >
-                Sign Up
+           <button  style={{color:"rgb(25, 25, 25)",backgroundColor:"rgb(214,214,214)"}} type="button" className="btn  btn-sm fw-bold rounded-pill border-0 nav-button"  >
+           <Link to='/signup' className="text-decoration-none" style={{color:"rgb(25, 25, 25)"}}>
+             Sign Up 
+             </Link>
             </button>
+         
             </div>
            
             
         </div>
         <CartOffCanvas/>
-               
+        <Login/>     
            
         </>
      );
