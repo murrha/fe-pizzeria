@@ -2,31 +2,37 @@
     {
         "id": 1,
         "name": "Pizza",
-        "image": "/img/menu-items/pizza.webp"
+        "image": "/img/menu-items/pizza.webp",
+        "tag": "pizzas"
     },
     {
         "id": 2,
         "name": "Salads",
-        "image": "/img/menu-items/salad.webp"
+        "image": "/img/menu-items/salad.webp",
+        "tag": "salads"
     },
     {
         "id": 3,
         "name": "Pastas",
-        "image": "/img/menu-items/pastas.webp"
+        "image": "/img/menu-items/pastas.webp",
+        "tag": "pastas"
     },
     {
         "id": 4,
         "name": "Starters",
-        "image": "/img/menu-items/starters.webp"
+        "image": "/img/menu-items/starters.webp",
+        "tag": "starters"
     },
     {
         "id": 5,
         "name": "Desserts",
-        "image": "/img/menu-items/desserts.webp"
+        "image": "/img/menu-items/desserts.webp",
+        "tag": "desserts"
     },
     {
         "id": 6,
         "name": "Take-Out",
-        "image": "/img/menu-items/takeout.webp"
+        "image": "/img/menu-items/takeout.webp",
+        "tag": "take-out"
     }
 ]
