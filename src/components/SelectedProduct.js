@@ -1,20 +1,24 @@
 import { useParams } from "react-router-dom";
 import ProductDetails from "./ProductDetails";
 
-const SelectedProduct = (props) => {
+const SelectedProduct = () => {
+  let foodListData = JSON.parse(localStorage.getItem("FOOD_DATA_JSON"));
 
-     //UseParams
-    let paramsObj = useParams(); 
-    console.log("useParams: " + paramsObj.id);
-    console.log(props.foodInfo);
+  //UseParams
+  let paramsObj = useParams();
+  console.log("useParams: " + paramsObj.id);
 
-    let selectedFood = props.foodInfo.find((food) => food.id == paramsObj.id);
-    console.log(selectedFood);
+  let selectedFood = foodListData.find((food) => {
+    console.log("food.id: ", food.id, "paramsObj.id: ", paramsObj.id);
+    return food.id === parseInt(paramsObj.id);
+  });
+  console.log("selectedFood: ", selectedFood);
 
+  return (
+    <>
+      <ProductDetails food={selectedFood} />
+    </>
+  );
+};
 
-    return ( <>
-        <ProductDetails food={selectedFood}/>
-    </> );
-}
- 
 export default SelectedProduct;

@@ -1,30 +1,17 @@
-import { useState,useEffect} from 'react';
-
-import ProductList from './ProductList';
-import SearchBar from './SearchBar';
-import FilterTagBar from './FilterTagBar';
-
-
+import ProductList from "./ProductList";
+import SearchBar from "./SearchBar";
+import FilterTagBar from "./FilterTagBar";
 
 const MenuList = () => {
-    let [foodData,setFoodData] = useState()
+  let foodListData = JSON.parse(localStorage.getItem("FOOD_DATA_JSON"));
 
-    useEffect(() => {
-        const getAllProducts = async ()=>{
-        let resp =  await fetch('./json/products.json');
-        let data = await resp.json();
-        setFoodData(data);    
-        };
-        getAllProducts();
-    },[]);
-    return ( 
-       <>
-       {foodData && <SearchBar foodList={foodData} disabled={false} readOnly={false}/>} 
-       {<FilterTagBar/>}
-      {foodData && <ProductList foodList={foodData}/>} 
-       </>
-     );
-}
+  return (
+    <>
+      <SearchBar foodList={foodListData} disabled={false} readOnly={false} />
+      {<FilterTagBar />}
+      <ProductList foodList={foodListData} />
+    </>
+  );
+};
 
- 
 export default MenuList;
