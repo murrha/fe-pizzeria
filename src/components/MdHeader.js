@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 import HeadOffCanvas from "./HeadOffCanvas";
 import CartOffCanvas from "./CartOffCanvas";
+import { useContext } from "react";
+import { ShopContext } from "../context/shop-context";
 
 const MdHeader = () => {
+  const { getCartCount } = useContext(ShopContext);
   return (
     <>
       <nav
@@ -32,7 +35,8 @@ const MdHeader = () => {
           >
             <i className="bi bi-cart-fill me-1"></i>
             <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary">
-              0<span className="visually-hidden">cart's items amount</span>
+              {getCartCount()}
+              <span className="visually-hidden">cart's items amount</span>
             </span>
           </button>
         </div>
