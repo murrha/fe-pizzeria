@@ -18,23 +18,23 @@ import MdHeader from "./components/MdHeader";
 import Signup from "./components/Signup";
 import { useEffect, useState } from "react";
 import SelectedProduct from "./components/SelectedProduct";
+import axios from "axios";
 
 function App() {
 
   let [foodData,setFoodData] = useState()
 
-    useEffect(() => {
-        const getAllProducts = async ()=>{
-        let resp =  await fetch('./json/products.json');
-        let data = await resp.json();
-        setFoodData(data);    
-        };
-        getAllProducts();
+  useEffect(() => {
+    const getAllProducts = async ()=>{
+    // let resp =  await fetch('./json/products.json');
+    // let data = await resp.json();
+    let resp = await axios.get('http://localhost:3002/menu')
+    let data = await resp.data
+    setFoodData(data);    
+    };
+    getAllProducts();
+},[]);
 
-        
-    },[]);
-
-    //console.log(foodData);
   
   return (
     <div className="container-fluid">
@@ -43,7 +43,7 @@ function App() {
       </Media>
       <Routes>
         <Route path="/" element={<Homepage />} />
-        <Route path='/menu' element={<MenuList/>}></Route>
+        <Route path='/menu' element={<MenuList foodData={foodData}/>}></Route>
         <Route path='/menu/:searchTerm' element={<SearchResult />}></Route> 
         <Route path='/notfound' element={<NotFound/>}></Route>
         <Route path="about" element={<About />} />
