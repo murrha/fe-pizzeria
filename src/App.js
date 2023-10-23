@@ -8,13 +8,14 @@ import Location from "./components/Location";
 import TermsPage from "./components/TermsPage";
 import PageNotFound from "./components/PageNotFound";
 import Homepage from "./components/Homepage";
+import Media from 'react-media';
+import Header from './components/Header';
+import MdHeader from './components/MdHeader'
+import ComingSoon from './components/ComingSoon';
+import ThankYouContact from './components/ThankYouContact';
 import MenuList from './components/menuPage/MenuList';
 import SearchResult from './components/menuPage/SearchResult';
 import NotFound from './components/menuPage/NotFound';
-
-import Media from "react-media";
-import Header from "./components/Header";
-import MdHeader from "./components/MdHeader";
 import Signup from "./components/Signup";
 import { useEffect, useState } from "react";
 import SelectedProduct from "./components/SelectedProduct";
@@ -53,6 +54,10 @@ function App() {
         <Route path="menu/item/:id" element={<SelectedProduct foodInfo={foodData}/>}/>
         <Route path="terms" element={<TermsPage />} />
         <Route path="*" element={<PageNotFound />} />
+        <Route path="soon"  element={<ComingSoon/>}/>
+        <Route path="thanks"  element={<ThankYouContact/>}/>
+
+     
         <Route path='/signup' element={<Signup/>}></Route>
 
       </Routes>
