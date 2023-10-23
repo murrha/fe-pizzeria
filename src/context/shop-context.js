@@ -4,11 +4,19 @@ import { toast } from "react-toastify";
 export const ShopContext = createContext(null);
 
 const getDefaultCart = () => {
-  let cart = {};
-  let endOfList = 39;
+  const inLocalStorage = JSON.parse(window.localStorage.getItem("CART_ITEMS"));
 
-  for (let i = 0; i < endOfList + 1; i++) {
-    cart[i] = 0;
+  let cart;
+
+  if (inLocalStorage !== null || inLocalStorage !== undefined) {
+    cart = JSON.parse(window.localStorage.getItem("CART_ITEMS"));
+  } else {
+    cart = {};
+    let endOfList = 39;
+
+    for (let i = 0; i < endOfList + 1; i++) {
+      cart[i] = 0;
+    }
   }
   return cart;
 };
@@ -16,11 +24,15 @@ const getDefaultCart = () => {
 export const ShopContextProvider = (props) => {
   const [cartItems, setCartItems] = useState(getDefaultCart());
 
-  useEffect(() => {
-    const data = window.localStorage.getItem("CART_ITEMS");
-    console.log("data: ", data);
-    setCartItems(JSON.parse(data));
-  }, []);
+  // if (cartItems != null || cartItems != undefined) {
+  //   window.localStorage.setItem("CART_ITEMS", JSON.stringify(cartItems));
+  // }
+
+  // useEffect(() => {
+  //   const data = window.localStorage.getItem("CART_ITEMS");
+  //   console.log("data: ", data);
+  //   setCartItems(JSON.parse(data));
+  // }, []);
 
   useEffect(() => {
     console.log("useEffect cartItems: ", cartItems);

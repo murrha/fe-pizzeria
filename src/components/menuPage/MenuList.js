@@ -1,8 +1,12 @@
 import ProductList from "./ProductList";
 import SearchBar from "./SearchBar";
 import FilterTagBar from "./FilterTagBar";
+import { ShopContext } from "../../context/shop-context";
+import { useContext } from "react";
 
 const MenuList = ({ foodData }) => {
+  const { cartItems } = useContext(ShopContext);
+  console.log("cartItems: ", cartItems);
   return (
     <>
       {foodData && (
