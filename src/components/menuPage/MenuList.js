@@ -1,30 +1,21 @@
-import { useState,useEffect} from 'react';
+import ProductList from "./ProductList";
+import SearchBar from "./SearchBar";
+import FilterTagBar from "./FilterTagBar";
+import { ShopContext } from "../../context/shop-context";
+import { useContext } from "react";
 
-import ProductList from './ProductList';
-import SearchBar from './SearchBar';
-import FilterTagBar from './FilterTagBar';
+const MenuList = ({ foodData }) => {
+  const { cartItems } = useContext(ShopContext);
+  console.log("cartItems: ", cartItems);
+  return (
+    <>
+      {foodData && (
+        <SearchBar foodList={foodData} disabled={false} readOnly={false} />
+      )}
+      {<FilterTagBar />}
+      {foodData && <ProductList foodList={foodData} />}
+    </>
+  );
+};
 
-
-
-const MenuList = () => {
-    let [foodData,setFoodData] = useState()
-
-    useEffect(() => {
-        const getAllProducts = async ()=>{
-        let resp =  await fetch('./json/products.json');
-        let data = await resp.json();
-        setFoodData(data);    
-        };
-        getAllProducts();
-    },[]);
-    return ( 
-       <>
-       {foodData && <SearchBar foodList={foodData} disabled={false} readOnly={false}/>} 
-       {<FilterTagBar/>}
-      {foodData && <ProductList foodList={foodData}/>} 
-       </>
-     );
-}
-
- 
 export default MenuList;
