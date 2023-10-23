@@ -34,12 +34,14 @@ const Footer = () => {
     <div className="col-sm-6">
     <ul className="nav mb-3">
       <li className="nav-item"><Link to="/" className="nav-link px-2 text-body-secondary"><b>Home</b></Link></li>
-      <li className="nav-item"><Link to="about" className="nav-link px-2 text-body-secondary"><b>About</b></Link></li>
-      <li className="nav-item"><Link to="contact" className="nav-link px-2 text-body-secondary"><b>Contact</b></Link></li>
-      <li className="nav-item"><Link to="faq" className="nav-link px-2 text-body-secondary"><b>FAQs</b></Link></li>
+      <li className="nav-item"><Link to="/menu" className="nav-link px-2 text-body-secondary"><b>Menu</b></Link></li>
       <li className="nav-item"><Link to="location" className="nav-link px-2 text-body-secondary"><b>Location</b></Link></li>
+      <li className="nav-item"><Link to="about" className="nav-link px-2 text-body-secondary"><b>About</b></Link></li>
+      <li className="nav-item"><Link to="faq" className="nav-link px-2 text-body-secondary"><b>FAQs</b></Link></li>
+      <li className="nav-item"><Link to="contact" className="nav-link px-2 text-body-secondary"><b>Contact</b></Link></li>
+      <li className="nav-item"><Link to="soon" className="nav-link px-2 text-body-secondary"><b>Rewards</b></Link></li>
       <li className="nav-item"><Link to="terms" className="nav-link px-2 text-body-secondary"><b>Terms</b></Link></li>
-
+      
     </ul>
     </div>
 

@@ -16,6 +16,8 @@ import NotFound from "./components/menuPage/NotFound";
 import Media from "react-media";
 import Header from "./components/Header";
 import MdHeader from "./components/MdHeader";
+// import ComingSoon from "./components/ComingSoon";
+// import ThankYouContact from "./components/ThankYouContact";
 import Signup from "./components/Signup";
 import { useEffect, useState } from "react";
 import SelectedProduct from "./components/SelectedProduct";
