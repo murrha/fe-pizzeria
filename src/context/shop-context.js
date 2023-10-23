@@ -15,7 +15,6 @@ const getDefaultCart = () => {
 
 export const ShopContextProvider = (props) => {
   const [cartItems, setCartItems] = useState(getDefaultCart());
-  // const { foodData } = useContext(DataContext);
 
   useEffect(() => {
     const data = window.localStorage.getItem("CART_ITEMS");
@@ -55,9 +54,9 @@ export const ShopContextProvider = (props) => {
   };
 
   const addToCart = (itemId) => {
-    setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
-    toast.success("Added item to cart", { position: "bottom-left" });
     console.log("cartItems: ", cartItems);
+    setCartItems((prev) => ({ ...prev, [itemId]: prev[parseInt(itemId)] + 1 }));
+    toast.success("Added item to cart", { position: "bottom-left" });
   };
 
   const removeFromCart = (itemId) => {

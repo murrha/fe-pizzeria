@@ -17,19 +17,30 @@ import Media from "react-media";
 import Header from "./components/Header";
 import MdHeader from "./components/MdHeader";
 import Signup from "./components/Signup";
+import { useEffect, useState } from "react";
 import SelectedProduct from "./components/SelectedProduct";
+import axios from "axios";
 import { ShopContextProvider } from "./context/shop-context";
 import { ToastContainer } from "react-toastify";
 
-const getAllProducts = async () => {
-  let resp = await fetch("/json/products.json");
-  let data = await resp.json();
-  window.localStorage.setItem("FOOD_DATA_JSON", JSON.stringify(data));
-  return data;
-};
-getAllProducts();
-
 function App() {
+  let [foodData, setFoodData] = useState();
+
+  useEffect(() => {
+    const getAllProducts = async () => {
+      // let resp =  await fetch('./json/products.json');
+      // let data = await resp.json();
+      let data;
+      do {
+        let resp = await axios.get("http://localhost:3002/menu");
+        data = await resp.data;
+      } while (data == null);
+      console.log("data: ", data);
+      setFoodData(data);
+    };
+    getAllProducts();
+  }, []);
+
   return (
     <div className="container-fluid">
       <ShopContextProvider>
@@ -39,19 +50,24 @@ function App() {
         </Media>
         <Routes>
           <Route path="/" element={<Homepage />} />
-          <Route path="/menu" element={<MenuList />}></Route>
+          <Route
+            path="/menu"
+            element={<MenuList foodData={foodData} />}
+          ></Route>
           <Route path="/menu/:searchTerm" element={<SearchResult />}></Route>
           <Route path="/notfound" element={<NotFound />}></Route>
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
           <Route path="faq" element={<FAQ />} />
           <Route path="location" element={<Location />} />
-          <Route path="menu/item/:id" element={<SelectedProduct />} />
+          <Route
+            path="menu/item/:id"
+            element={<SelectedProduct foodInfo={foodData} />}
+          />
           <Route path="terms" element={<TermsPage />} />
           <Route path="*" element={<PageNotFound />} />
           <Route path="/signup" element={<Signup />}></Route>
         </Routes>
-
         <Footer />
       </ShopContextProvider>
     </div>

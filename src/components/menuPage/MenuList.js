@@ -2,14 +2,14 @@ import ProductList from "./ProductList";
 import SearchBar from "./SearchBar";
 import FilterTagBar from "./FilterTagBar";
 
-const MenuList = () => {
-  let foodListData = JSON.parse(localStorage.getItem("FOOD_DATA_JSON"));
-
+const MenuList = ({ foodData }) => {
   return (
     <>
-      <SearchBar foodList={foodListData} disabled={false} readOnly={false} />
+      {foodData && (
+        <SearchBar foodList={foodData} disabled={false} readOnly={false} />
+      )}
       {<FilterTagBar />}
-      <ProductList foodList={foodListData} />
+      {foodData && <ProductList foodList={foodData} />}
     </>
   );
 };

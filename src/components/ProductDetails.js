@@ -3,9 +3,10 @@ import { useContext } from "react";
 import { ShopContext } from "../context/shop-context";
 
 const ProductDetails = (props) => {
-  const { addToCart, getTotalCartAmount } = useContext(ShopContext);
+  const { addToCart } = useContext(ShopContext);
 
-  console.log(props.food);
+  console.log("props.food: ", props.food);
+  console.log("props.food.id: ", props.food.id);
 
   //loading screen
   if (!props.food) {
