@@ -8,7 +8,7 @@ const getDefaultCart = () => {
 
   let cart;
 
-  if (inLocalStorage !== null || inLocalStorage !== undefined) {
+  if (inLocalStorage !== null) {
     cart = JSON.parse(window.localStorage.getItem("CART_ITEMS"));
   } else {
     cart = {};
@@ -34,9 +34,20 @@ export const ShopContextProvider = (props) => {
   //   setCartItems(JSON.parse(data));
   // }, []);
 
+  // useEffect(() => {
+  //   if (cartItems === null) {
+  //     setCartItems(getDefaultCart());
+  //   }
+  // }, [cartItems]);
+
   useEffect(() => {
     console.log("useEffect cartItems: ", cartItems);
-    window.localStorage.setItem("CART_ITEMS", JSON.stringify(cartItems));
+    if (cartItems === null) {
+      setCartItems(getDefaultCart());
+      window.localStorage.setItem("CART_ITEMS", JSON.stringify(cartItems));
+    } else {
+      window.localStorage.setItem("CART_ITEMS", JSON.stringify(cartItems));
+    }
   }, [cartItems]);
 
   const getTotalCartAmount = () => {
@@ -69,6 +80,7 @@ export const ShopContextProvider = (props) => {
     console.log("cartItems: ", cartItems);
     setCartItems((prev) => ({ ...prev, [itemId]: prev[parseInt(itemId)] + 1 }));
     toast.success("Added item to cart", { position: "bottom-left" });
+    window.localStorage.setItem("CART_ITEMS", JSON.stringify(cartItems));
   };
 
   const removeFromCart = (itemId) => {
