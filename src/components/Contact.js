@@ -14,7 +14,9 @@ const Contact = () => {
 
     </div>
 
+
     <div className="col-md-7">
+
       <form action="https://formsubmit.co/danachen789@gmail.com" method="POST">
       <input type="hidden" name="_captcha" value="false"/>
 
