@@ -53,10 +53,11 @@ const About = () => {
           makes it simple to get delicious pizza on demand fast. Just a few
           clicks and we’ll deliver hot pizza to your door!
         </p>
+
         <Link
           name="order button"
           id="order"
-          className="btn btn-success fw-bold btn-lg btn-warning text-dark"
+          class="btn fw-bold btn-lg btn-warning text-dark"
           to="/menu"
           role="button"
         >
