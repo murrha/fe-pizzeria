@@ -34,7 +34,7 @@ const MdHeader = () => {
             aria-controls="cart"
           >
             <i className="bi bi-cart-fill me-1"></i>
-            <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary">
+            <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark">
               {getCartCount()}
               <span className="visually-hidden">cart's items amount</span>
             </span>

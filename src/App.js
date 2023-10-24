@@ -51,7 +51,7 @@ function App() {
     <div className="container-fluid">
       <ShopContextProvider>
         <ToastContainer />
-        <Media query={{ maxWidth: 599 }}>
+        <Media query={{ maxWidth: 768 }}>
           {(matches) => (matches ? <MdHeader /> : <Header />)}
         </Media>
         <Routes>
