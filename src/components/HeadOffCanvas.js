@@ -19,6 +19,25 @@ const HeadOffCanvas = () => {
               <Link to='/menu' className="p-3 border-bottom nav-link"  style={{color:"rgb(25, 25, 25)"}}>
               <i className="bi bi-list me-2"></i>Menu</Link>
               </li>
+  
+              <li className="nav-item">
+              <Link to='/location' className="p-3 border-bottom nav-link"  style={{color:"rgb(25, 25, 25)"}}>
+              <i className="bi bi-geo-alt-fill me-2"></i>Location</Link>
+              </li>
+              <li className="nav-item">
+              <Link to='/about' className="p-3 border-bottom nav-link"  style={{color:"rgb(25, 25, 25)"}}>
+              <i className="bi bi-three-dots me-2"></i>About</Link>
+              </li>
+              <li className="nav-item">
+              <Link to='/faq' className="p-3 border-bottom nav-link"  style={{color:"rgb(25, 25, 25)"}}>
+              <i className="bi bi-chat-left-dots me-2"></i>FAQ</Link>
+              </li>
+              <li className="nav-item">
+              <Link to='/contact' className="p-3 border-bottom nav-link"  style={{color:"rgb(25, 25, 25)"}}>
+              <i className="bi bi-person-lines-fill me-2"></i>Contact</Link>
+              </li>
+            
+              
               <li className="nav-item p-3 border-bottom"  >
               <span className="text-reset signInSideMenu" data-bs-toggle="modal" data-bs-target="#loginModal"><i className="bi bi-person-fill me-1"></i>
                 Sign Up or Sign In
