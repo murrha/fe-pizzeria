@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "name": "Pizza",
+        "image": "/img/menu-items/pizza.webp"
+    },
+    {
+        "id": 2,
+        "name": "Salads",
+        "image": "/img/menu-items/salad.webp"
+    },
+    {
+        "id": 3,
+        "name": "Pastas",
+        "image": "/img/menu-items/pastas.webp"
+    },
+    {
+        "id": 4,
+        "name": "Starters",
+        "image": "/img/menu-items/starters.webp"
+    },
+    {
+        "id": 5,
+        "name": "Desserts",
+        "image": "/img/menu-items/desserts.webp"
+    },
+    {
+        "id": 6,
+        "name": "Take-Out",
+        "image": "/img/menu-items/takeout.webp"
+    }
+]
