@@ -1,7 +1,7 @@
 import { HashLink } from "react-router-hash-link";
 
 const MenuItem = (props) => {
-  console.log("Inside MenuItem");
+  // console.log("Inside MenuItem");
 
   console.log(props.item.id + " " + props.item.name);
 
