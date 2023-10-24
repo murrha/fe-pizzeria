@@ -28,6 +28,7 @@ import { ToastContainer } from "react-toastify";
 import { useContext } from "react";
 import { ShopContext } from "./context/shop-context";
 import Cart from "./components/Cart";
+import Checkout from "./components/Checkout";
 
 function App() {
   // let [foodData, setFoodData] = useState();
@@ -81,6 +82,7 @@ function App() {
 
           <Route path="/signup" element={<Signup />}></Route>
           <Route path="/cart" element={<Cart />} />
+          <Route path="/checkout" element={<Checkout />} />
         </Routes>
 
         <Footer />
