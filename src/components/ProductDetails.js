@@ -3,10 +3,10 @@ import { useContext } from "react";
 import { ShopContext } from "../context/shop-context";
 
 const ProductDetails = (props) => {
-  const { addToCart, cartItems } = useContext(ShopContext);
+  const { addToCart, cartItems, getTotalCartAmount } = useContext(ShopContext);
 
-  console.log("props.food: ", props.food);
-  console.log("props.food.id: ", props.food.id);
+  // console.log("props.food: ", props.food);
+  // console.log("props.food.id: ", props.food.id);
   console.log("cartItems: ", cartItems);
 
   //loading screen

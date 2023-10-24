@@ -4,9 +4,11 @@ import FilterTagBar from "./FilterTagBar";
 import { ShopContext } from "../../context/shop-context";
 import { useContext } from "react";
 
-const MenuList = ({ foodData }) => {
-  const { cartItems } = useContext(ShopContext);
-  console.log("cartItems: ", cartItems);
+const MenuList = () => {
+  const { foodData } = useContext(ShopContext);
+  console.log("foodData in menu list: ", foodData);
+  // const { cartItems } = useContext(ShopContext);
+  // console.log("cartItems: ", cartItems);
   return (
     <>
       {foodData && (

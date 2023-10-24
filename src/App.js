@@ -24,28 +24,32 @@ import SelectedProduct from "./components/SelectedProduct";
 import axios from "axios";
 import { ShopContextProvider } from "./context/shop-context";
 import { ToastContainer } from "react-toastify";
-// import { useContext } from "react";
-// import { ShopContext } from "./context/shop-context";
+// import foodData from "../src/products.json";
+import { useContext } from "react";
+import { ShopContext } from "./context/shop-context";
+import Cart from "./components/Cart";
 
 function App() {
-  let [foodData, setFoodData] = useState();
+  // let [foodData, setFoodData] = useState();
   // const { cartItems } = useContext(ShopContext);
+  const foodData = useContext(ShopContext);
+  console.log("foodData at app.js: ", foodData);
   // console.log("cartItems at app.js: ", cartItems);
 
-  useEffect(() => {
-    const getAllProducts = async () => {
-      // let resp =  await fetch('./json/products.json');
-      // let data = await resp.json();
-      let data;
-      do {
-        let resp = await axios.get("http://localhost:3002/menu");
-        data = await resp.data;
-      } while (data == null);
-      console.log("data: ", data);
-      setFoodData(data);
-    };
-    getAllProducts();
-  }, []);
+  // useEffect(() => {
+  //   const getAllProducts = async () => {
+  //     // let resp =  await fetch('./json/products.json');
+  //     // let data = await resp.json();
+  //     let data;
+  //     do {
+  //       let resp = await axios.get("http://localhost:3002/menu");
+  //       data = await resp.data;
+  //     } while (data == null || data == undefined);
+  //     console.log("data: ", data);
+  //     setFoodData(data);
+  //   };
+  //   getAllProducts();
+  // }, []);
 
   return (
     <div className="container-fluid">
@@ -76,6 +80,7 @@ function App() {
           <Route path="thanks" element={<ThankYouContact />} />
 
           <Route path="/signup" element={<Signup />}></Route>
+          <Route path="/cart" element={<Cart />} />
         </Routes>
 
         <Footer />
