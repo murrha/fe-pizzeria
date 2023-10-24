@@ -26,7 +26,7 @@ const getDefaultCart = () => {
 export const ShopContextProvider = (props) => {
   const [cartItems, setCartItems] = useState(getDefaultCart());
   let [foodData, setFoodData] = useState();
-  if (cartItems != null || cartItems != undefined) {
+  if (cartItems !== null || cartItems !== undefined) {
     window.localStorage.setItem("CART_ITEMS", JSON.stringify(cartItems));
   }
 
@@ -50,7 +50,7 @@ export const ShopContextProvider = (props) => {
       do {
         let resp = await axios.get("http://localhost:3002/menu");
         data = await resp.data;
-      } while (data == null || data == undefined);
+      } while (data === null || data === undefined);
       window.localStorage.setItem("MENU_DATA", JSON.stringify(data));
       console.log("backend fetch data: ", data);
       setFoodData(data);
@@ -93,7 +93,7 @@ export const ShopContextProvider = (props) => {
     let totalAmount = 0;
 
     let foodDataList;
-    if (foodData == null || foodData == undefined) {
+    if (foodData === null || foodData === undefined) {
       foodDataList = JSON.parse(window.localStorage.getItem("MENU_DATA"));
     } else {
       foodDataList = foodData;
@@ -137,19 +137,19 @@ export const ShopContextProvider = (props) => {
 
     console.log("add to cart itemId: ", itemId);
     setCartItems((prev) => ({ ...prev, [itemId]: prev[parseInt(itemId)] + 1 }));
-    if (window.location.pathname != "/cart") {
-      toast.success("Added item to cart", { position: "bottom-left" });
-    }
+    toast.success("Added item to cart", { position: "bottom-left" });
     window.localStorage.setItem("CART_ITEMS", JSON.stringify(cartItems));
   };
 
   const removeFromCart = (itemId) => {
     setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
+    window.localStorage.setItem("CART_ITEMS", JSON.stringify(cartItems));
     // console.log("cartItems: ", cartItems);
   };
 
   const updateCartItemCount = (newAmount, itemId) => {
     setCartItems((prev) => ({ ...prev, [itemId]: newAmount }));
+    window.localStorage.setItem("CART_ITEMS", JSON.stringify(cartItems));
   };
 
   const checkout = () => {
