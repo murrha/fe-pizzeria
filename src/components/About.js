@@ -45,7 +45,9 @@ const About = () => {
         We hope you'll stop by to grab a slice, enjoy our tech-inspired atmosphere, and sample some of the best pizza in town!
          The laptop bar is always open for coders and pizza lovers alike. Our website also makes it simple to get delicious pizza on demand fast. Just a few clicks and we’ll deliver hot pizza to your door!
         </p>
-        <Link name="order button" id="order" class="btn btn-success fw-bold btn-lg btn-warning text-dark" to="/menu" role="button">Order Now</Link>
+      
+        <Link name="order button" id="order" class="btn fw-bold btn-lg btn-warning text-dark" to="/menu" role="button">Order Now</Link>
+
     </div>
  
    
