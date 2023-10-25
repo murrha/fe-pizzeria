@@ -24,6 +24,7 @@ import SelectedProduct from "./components/SelectedProduct";
 import axios from "axios";
 import { ShopContextProvider } from "./context/shop-context";
 import { ToastContainer } from "react-toastify";
+import ChatBot from "./components/chatbot/ChatBot.js";
 // import { useContext } from "react";
 // import { ShopContext } from "./context/shop-context";
 
@@ -54,6 +55,7 @@ function App() {
         <Media query={{ maxWidth: 768 }}>
           {(matches) => (matches ? <MdHeader /> : <Header />)}
         </Media>
+        <ChatBot/>
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route
