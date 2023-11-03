@@ -1,6 +1,7 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState, useContext } from "react";
 import { toast } from "react-toastify";
 import axios from "axios";
+import { DataContext } from "./data-context";
 // import foodData from "../products.json";
 
 export const ShopContext = createContext(null);
@@ -24,6 +25,22 @@ const getDefaultCart = () => {
 };
 
 export const ShopContextProvider = (props) => {
+  const fetchAllMenu = async () => {
+    let data;
+    let resp = await axios.get("http://localhost:3002/menu");
+    await console.log("resp: ", resp);
+    data = await resp.data;
+    await console.log(">>> START data: ", data);
+    await window.localStorage.setItem("MENU_DATA", JSON.stringify(data));
+  };
+  const getAllMenu = async () => {
+    if ((await JSON.parse(window.localStorage.getItem("MENU_DATA"))) == null) {
+      await fetchAllMenu();
+    }
+    let data = JSON.parse(window.localStorage.getItem("MENU_DATA"));
+    return data;
+  };
+
   const [cartItems, setCartItems] = useState(getDefaultCart());
   let [foodData, setFoodData] = useState();
   if (cartItems !== null || cartItems !== undefined) {
@@ -51,12 +68,13 @@ export const ShopContextProvider = (props) => {
         let resp = await axios.get("http://localhost:3002/menu");
         data = await resp.data;
       } while (data === null || data === undefined);
+      console.log("data inside useEffect shop-context: ", data);
       window.localStorage.setItem("MENU_DATA", JSON.stringify(data));
       console.log("backend fetch data: ", data);
       setFoodData(data);
     };
     getAllProducts();
-  }, []);
+  }, [foodData]);
 
   useEffect(() => {
     // console.log("useEffect cartItems: ", cartItems);
@@ -89,21 +107,26 @@ export const ShopContextProvider = (props) => {
     return cartItemCount;
   };
 
-  const getTotalCartAmount = () => {
-    let totalAmount = 0;
+  const GetTotalCartAmount = () => {
+    const { foodData } = useContext(DataContext);
 
-    let foodDataList;
-    if (foodData === null || foodData === undefined) {
-      foodDataList = JSON.parse(window.localStorage.getItem("MENU_DATA"));
-    } else {
-      foodDataList = foodData;
-    }
+    let totalAmount = 0;
+    console.log("foodData in GetTotalCartAmount (new): ", foodData);
+    let foodDataList = foodData;
+    // if (foodData === null || foodData === undefined) {
+    //   foodDataList = JSON.parse(window.localStorage.getItem("MENU_DATA"));
+    // } else {
+    //   foodDataList = foodData;
+    // }
     console.log("foodData inside getTotalCartAmount >>: ", foodData);
     // console.log("cartItems in getTotalCartAmount: ", cartItems);
     // console.log("foodListData: ", foodListData);
     for (const item in cartItems) {
       if (cartItems[item] > 0) {
         // console.log("item: ", typeof item);
+        // while (foodDataList == undefined) {
+        //   console.log("Loading...");
+        // }
         let itemInfo = foodDataList.find(
           (product) => product.id === parseInt(item)
         );
@@ -161,11 +184,13 @@ export const ShopContextProvider = (props) => {
     addToCart,
     updateCartItemCount,
     removeFromCart,
-    getTotalCartAmount,
+    GetTotalCartAmount,
     getCartCount,
     getCartItemCount,
     checkout,
     foodData,
+    fetchAllMenu,
+    getAllMenu,
   };
 
   return (

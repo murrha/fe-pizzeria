@@ -21,6 +21,11 @@ const SelectedProduct = (props) => {
   } else {
     foodDataList = foodData;
   }
+
+  while (foodDataList == undefined) {
+    console.log("Loading...");
+  }
+
   let selectedFood = foodDataList.find(
     (food) => food.id === parseInt(paramsObj.id)
   );

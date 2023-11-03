@@ -1,12 +1,18 @@
 // import axios from "axios";
-import { useContext, useState, useEffect } from "react";
+import {
+  useContext,
+  GetTotalCartAmount,
+  foodData,
+  useState,
+  useEffect,
+} from "react";
 import { ShopContext } from "../context/shop-context";
 // import foodData from "../products.json";
 import CartItem from "./CartItem";
 import { useNavigate } from "react-router-dom";
 
 const CartOffCanvas = () => {
-  const { cartItems, getTotalCartAmount } = useContext(ShopContext);
+  const { cartItems, GetTotalCartAmount } = useContext(ShopContext);
   const navigate = useNavigate();
   // console.log("foodData: ", foodData[2]);
 
@@ -67,11 +73,11 @@ const CartOffCanvas = () => {
             
             
             */}
-          {getTotalCartAmount().toFixed(2) == 0.0 ? (
+          {GetTotalCartAmount().toFixed(2) == 0.0 ? (
             <p>Your cart is empty</p>
           ) : (
             <>
-              <b>Total: {getTotalCartAmount().toFixed(2)}</b>
+              <b>Total: {GetTotalCartAmount().toFixed(2)}</b>
               <div>
                 <button
                   className="btn btn-warning"
