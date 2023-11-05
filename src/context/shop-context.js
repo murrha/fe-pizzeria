@@ -1,8 +1,7 @@
-import { createContext, useEffect, useState, useContext } from "react";
+import { createContext, useEffect, useState } from "react";
 import { toast } from "react-toastify";
-import axios from "axios";
-import { DataContext } from "./data-context";
-// import foodData from "../products.json";
+// import { DataContext } from "./data-context";
+import { getAllMenu } from "../helperFunctions/getMenuData";
 
 export const ShopContext = createContext(null);
 
@@ -25,24 +24,8 @@ const getDefaultCart = () => {
 };
 
 export const ShopContextProvider = (props) => {
-  const fetchAllMenu = async () => {
-    let data;
-    let resp = await axios.get("http://localhost:3002/menu");
-    await console.log("resp: ", resp);
-    data = await resp.data;
-    await console.log(">>> START data: ", data);
-    await window.localStorage.setItem("MENU_DATA", JSON.stringify(data));
-  };
-  const getAllMenu = async () => {
-    if ((await JSON.parse(window.localStorage.getItem("MENU_DATA"))) == null) {
-      await fetchAllMenu();
-    }
-    let data = JSON.parse(window.localStorage.getItem("MENU_DATA"));
-    return data;
-  };
-
   const [cartItems, setCartItems] = useState(getDefaultCart());
-  let [foodData, setFoodData] = useState();
+  // let [foodData, setFoodData] = useState();
   if (cartItems !== null || cartItems !== undefined) {
     window.localStorage.setItem("CART_ITEMS", JSON.stringify(cartItems));
   }
@@ -58,23 +41,6 @@ export const ShopContextProvider = (props) => {
       setCartItems(getDefaultCart());
     }
   }, [cartItems]);
-
-  useEffect(() => {
-    const getAllProducts = async () => {
-      // let resp =  await fetch('./json/products.json');
-      // let data = await resp.json();
-      let data;
-      do {
-        let resp = await axios.get("http://localhost:3002/menu");
-        data = await resp.data;
-      } while (data === null || data === undefined);
-      console.log("data inside useEffect shop-context: ", data);
-      window.localStorage.setItem("MENU_DATA", JSON.stringify(data));
-      console.log("backend fetch data: ", data);
-      setFoodData(data);
-    };
-    getAllProducts();
-  }, [foodData]);
 
   useEffect(() => {
     // console.log("useEffect cartItems: ", cartItems);
@@ -108,17 +74,18 @@ export const ShopContextProvider = (props) => {
   };
 
   const GetTotalCartAmount = () => {
-    const { foodData } = useContext(DataContext);
+    // const { foodData } = useContext(DataContext);
 
     let totalAmount = 0;
-    console.log("foodData in GetTotalCartAmount (new): ", foodData);
-    let foodDataList = foodData;
-    // if (foodData === null || foodData === undefined) {
-    //   foodDataList = JSON.parse(window.localStorage.getItem("MENU_DATA"));
-    // } else {
-    //   foodDataList = foodData;
-    // }
-    console.log("foodData inside getTotalCartAmount >>: ", foodData);
+    // console.log("foodData in GetTotalCartAmount (new): ", foodData);
+    // let foodDataList = getAllMenu();
+    console.log("getAllMenu() in shop-context.js: ", getAllMenu());
+    // console.log("getAllMenu() is array?: ", Array.isArray(getAllMenu()));
+    const foodDataList = JSON.parse(window.localStorage.getItem("MENU_DATA"));
+
+    // console.log("foodData inside getTotalCartAmount >>: ", foodData);
+    console.log("foodDataList inside getTotalCartAmount >>: ", foodDataList);
+
     // console.log("cartItems in getTotalCartAmount: ", cartItems);
     // console.log("foodListData: ", foodListData);
     for (const item in cartItems) {
@@ -188,9 +155,7 @@ export const ShopContextProvider = (props) => {
     getCartCount,
     getCartItemCount,
     checkout,
-    foodData,
-    fetchAllMenu,
-    getAllMenu,
+    // foodData,
   };
 
   return (
