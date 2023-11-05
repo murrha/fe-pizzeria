@@ -1,11 +1,5 @@
 // import axios from "axios";
-import {
-  useContext,
-  GetTotalCartAmount,
-  foodData,
-  useState,
-  useEffect,
-} from "react";
+import { useContext } from "react";
 import { ShopContext } from "../context/shop-context";
 // import foodData from "../products.json";
 import CartItem from "./CartItem";
@@ -73,7 +67,7 @@ const CartOffCanvas = () => {
             
             
             */}
-          {GetTotalCartAmount().toFixed(2) == 0.0 ? (
+          {GetTotalCartAmount().toFixed(2) === 0.0 ? (
             <p>Your cart is empty</p>
           ) : (
             <>

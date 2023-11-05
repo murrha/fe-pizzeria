@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { ShopContext } from "../context/shop-context";
 
 const ProductDetails = (props) => {
-  const { addToCart, cartItems, getTotalCartAmount } = useContext(ShopContext);
+  const { addToCart, cartItems } = useContext(ShopContext);
 
   console.log("props.food: ", props.food);
   console.log("props.food.id: ", props.food.id);

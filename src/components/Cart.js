@@ -1,4 +1,4 @@
-import { useContext, useState, useEffect } from "react";
+import { useContext } from "react";
 import { ShopContext } from "../context/shop-context";
 // import foodData from "../products.json";
 import CartItem from "./CartItem";
@@ -26,7 +26,7 @@ const Cart = () => {
             return <CartItem index={parseInt(idx)} key={idx} />;
           }
         })}
-        {getTotalCartAmount().toFixed(2) == 0.0 ? (
+        {getTotalCartAmount().toFixed(2) === 0.0 ? (
           <p>Your cart is empty</p>
         ) : (
           <>
