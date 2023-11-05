@@ -1,6 +1,5 @@
 import { createContext, useEffect, useState } from "react";
 import { toast } from "react-toastify";
-// import { DataContext } from "./data-context";
 import { getAllMenu } from "../helperFunctions/getMenuData";
 
 export const ShopContext = createContext(null);
@@ -25,7 +24,6 @@ const getDefaultCart = () => {
 
 export const ShopContextProvider = (props) => {
   const [cartItems, setCartItems] = useState(getDefaultCart());
-  // let [foodData, setFoodData] = useState();
   if (cartItems !== null || cartItems !== undefined) {
     window.localStorage.setItem("CART_ITEMS", JSON.stringify(cartItems));
   }
@@ -155,7 +153,6 @@ export const ShopContextProvider = (props) => {
     getCartCount,
     getCartItemCount,
     checkout,
-    // foodData,
   };
 
   return (
