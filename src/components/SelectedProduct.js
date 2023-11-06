@@ -14,7 +14,7 @@ const SelectedProduct = (props) => {
 
   return (
     <>
-      <ProductDetails food={selectedFood} />
+      <ProductDetails food={selectedFood} />{" "}
     </>
   );
 };
