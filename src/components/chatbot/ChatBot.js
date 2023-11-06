@@ -13,8 +13,6 @@ const ChatBot = () => {
   let chatHandler = ()=>{
   setChatDisplay("d-block")
   setChatOpen(true)
- 
-
   }
   return (
     <>

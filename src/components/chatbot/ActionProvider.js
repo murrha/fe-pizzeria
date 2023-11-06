@@ -2,7 +2,7 @@ import React from 'react';
 import { createClientMessage } from 'react-chatbot-kit';
 
 const ActionProvider = ({ createChatBotMessage, setState, children }) => {
-  let emojiArr = ['✋','✌️','✊']
+ 
 const handleHello = ()=>{
     const botMessage = createChatBotMessage('Hello. Nice to meet you.')
     addMessageToState(botMessage)
@@ -23,12 +23,11 @@ const handleHello = ()=>{
       addMessageToState(botMessage)
     }
     const handlePlayAround = () => {
-      
+      let emojiArr = ['✋','✌️','✊']
+
       let  message = createChatBotMessage(
-        emojiArr[Math.floor(Math.random()*emojiArr.length)],{
-          withAvatar: true,
-        }
-      )
+        emojiArr[Math.floor(Math.random()*emojiArr.length)],
+        {withAvatar: true})
       addMessageToState(message);
       
       setTimeout(()=>{
