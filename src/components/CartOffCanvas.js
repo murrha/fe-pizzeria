@@ -71,7 +71,7 @@ const CartOffCanvas = () => {
             <p>Your cart is empty</p>
           ) : (
             <>
-              <b>Total: {GetTotalCartAmount().toFixed(2)}</b>
+              <b>TOTAL: ${GetTotalCartAmount().toFixed(2)}</b>
               <div>
                 <button
                   className="btn btn-warning"

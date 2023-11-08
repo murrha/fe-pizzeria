@@ -17,9 +17,15 @@ const CartItem = (props) => {
   // console.log(">>>foodData<<<: ", foodData); viewed as undefined
   console.log(">>>index in cartItem<<<: ", index);
 
-  if(foodDataList[index - 1].id == index){
-    console.log(">>>foodDataList: " + foodDataList[index - 1].name); 
-  }
+  ///sorts MENU_DATA 
+  let sorted = foodDataList.sort(function (a, b){
+    return b.id < a.id ? 1
+    : b.id > a.id ? -1
+    :0
+  });
+
+  foodDataList = sorted;
+  console.log(">>> sorted foodDataList: " + foodDataList[index - 1].name); 
   
 
   // console.log(foodData[10].name, foodData[10].price);
