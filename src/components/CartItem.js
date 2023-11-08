@@ -14,10 +14,13 @@ const CartItem = (props) => {
     foodDataList = foodData;
   }
 
-  console.log(">>>foodData<<<: ", foodData);
+  // console.log(">>>foodData<<<: ", foodData); viewed as undefined
   console.log(">>>index in cartItem<<<: ", index);
-  console.log(">>>foodDataList: " + foodDataList); 
-  console.log(">>>Local storage key: " +  JSON.parse(window.localStorage.getItem("MENU_DATA".id))); 
+
+  if(foodDataList[index - 1].id == index){
+    console.log(">>>foodDataList: " + foodDataList[index - 1].name); 
+  }
+  
 
   // console.log(foodData[10].name, foodData[10].price);
   const { addToCart, removeFromCart, getCartItemCount, updateCartItemCount } =
@@ -44,11 +47,20 @@ const CartItem = (props) => {
 
   return (
     <>
-      <p>
-        <h5>{foodDataList[index - 1].name} {foodDataList[index - 1].price}</h5>
+      <div>
+        <div className="card">
+              <img
+                className="img-fluid rounded-start p-2"
+                src={`${foodDataList[index - 1].image}`}
+                alt={`${foodDataList[index - 1].name}`}
+              />
 
-        <img src={`${foodDataList[index - 1].image}`} alt={foodDataList[index - 1].name}/>
-      </p>
+              <div className="card-body">
+                <h5 className="card-title">{foodDataList[index - 1].name}</h5>
+                <h5>{foodDataList[index - 1].price}</h5>
+              </div>
+        </div>
+      </div>
       <div className="input-group mb-3 mt-3">
         {getCartItemCount(index) <= 0 ? (
           <button className="btn btn-outline-secondary disabled px-2">-</button>

@@ -37,9 +37,9 @@ const CartOffCanvas = () => {
         aria-labelledby="cartLabel"
       >
         <div className="offcanvas-header">
-          <h5 className="offcanvas-title" id="cartLabel">
+          <h3 className="offcanvas-title" id="cartLabel">
             Cart
-          </h5>
+          </h3>
           <button
             type="button"
             className="btn-close"
