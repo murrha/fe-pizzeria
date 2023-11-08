@@ -16,6 +16,8 @@ const CartItem = (props) => {
 
   console.log(">>>foodData<<<: ", foodData);
   console.log(">>>index in cartItem<<<: ", index);
+  console.log(">>>foodDataList: " + foodDataList); 
+  console.log(">>>Local storage key: " +  JSON.parse(window.localStorage.getItem("MENU_DATA".id))); 
 
   // console.log(foodData[10].name, foodData[10].price);
   const { addToCart, removeFromCart, getCartItemCount, updateCartItemCount } =
@@ -43,7 +45,9 @@ const CartItem = (props) => {
   return (
     <>
       <p>
-        {foodDataList[index - 1].name} {foodDataList[index - 1].price}
+        <h5>{foodDataList[index - 1].name} {foodDataList[index - 1].price}</h5>
+
+        <img src={`${foodDataList[index - 1].image}`} alt={foodDataList[index - 1].name}/>
       </p>
       <div className="input-group mb-3 mt-3">
         {getCartItemCount(index) <= 0 ? (
