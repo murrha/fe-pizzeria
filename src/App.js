@@ -23,6 +23,8 @@ import SelectedProduct from "./components/SelectedProduct";
 import { ShopContextProvider } from "./context/shop-context";
 import { DataContextProvider } from "./context/data-context";
 import { ToastContainer } from "react-toastify";
+import ChatBot from "./components/chatbot/ChatBot.js";
+
 import Cart from "./components/Cart";
 
 import { getAllMenu } from "./helperFunctions/getMenuData";
@@ -40,6 +42,7 @@ function App() {
           <Media query={{ maxWidth: 768 }}>
             {(matches) => (matches ? <MdHeader /> : <Header />)}
           </Media>
+          <ChatBot/>
           <Routes>
             <Route path="/" element={<Homepage />} />
             <Route

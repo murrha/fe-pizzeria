@@ -4,10 +4,12 @@ import { useState } from "react";
 const SearchBar = (props) => {
   let navigate = useNavigate();
   let [searchInput, setSearchInput] = useState("");
+ 
   let inputHandler = (e) => {
     let searchItem = e.target.value;
     setSearchInput(searchItem);
   };
+  
   let searchHandler = () => {
     let searchFilterArr = props.foodList.filter((food) =>
       food.name.toLowerCase().includes(searchInput.toLowerCase())

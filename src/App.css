@@ -108,3 +108,32 @@ div.scrollTag{
     width: fit-content
   }
 }
+
+.chatbox{
+  position: fixed;
+  bottom: 20px;
+  right:0;
+  z-index: 100;
+  border-radius: 5px;
+  border:1px solid #dcd9d6ee
+}
+
+#chatButton{
+  position: fixed;
+  bottom: 15px;
+  right:0;
+  margin-right:20px;
+  z-index:100;
+  
+}
+
+.react-chatbot-kit-chat-message-container::-webkit-scrollbar{
+  display: none;
+}
+.react-chatbot-kit-chat-container {
+  width:300px !important
+}
+
+.react-chatbot-kit-chat-input:focus {
+  outline:0 !important
+}
