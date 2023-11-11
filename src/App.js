@@ -24,6 +24,9 @@ import SelectedProduct from "./components/SelectedProduct";
 import axios from "axios";
 import { ShopContextProvider } from "./context/shop-context";
 import { ToastContainer } from "react-toastify";
+import Profile from "./components/user/Profile";
+import PasswordReset from "./components/user/PasswordReset";
+
 // import { useContext } from "react";
 // import { ShopContext } from "./context/shop-context";
 
@@ -48,7 +51,7 @@ function App() {
   }, []);
 
   return (
-    <div className="container-fluid">
+    <div className="container-fluid" id='content'>
       <ShopContextProvider>
         <ToastContainer />
         <Media query={{ maxWidth: 768 }}>
@@ -76,6 +79,9 @@ function App() {
           <Route path="thanks" element={<ThankYouContact />} />
 
           <Route path="/signup" element={<Signup />}></Route>
+
+          <Route path="/profile" element={<Profile/>}></Route>
+          <Route path="/password-reset" element={<PasswordReset/>}></Route>
         </Routes>
 
         <Footer />
