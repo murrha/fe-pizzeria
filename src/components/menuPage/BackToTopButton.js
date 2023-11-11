@@ -11,7 +11,7 @@ const BackToTopButton = () => {
                 setButtonShow(false)
             }
         })
-    })
+    },[])
     const scrollUp = ()=>{
         window.scrollTo({
             top:0,
@@ -21,7 +21,6 @@ const BackToTopButton = () => {
     return ( 
         buttonShow &&
         <button onClick={scrollUp} style={{
-            
             bottom:"80px",
             float:'right',
             position:"sticky"}}

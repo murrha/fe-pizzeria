@@ -59,7 +59,7 @@ const HeadOffCanvas = () => {
               <i class="bi bi-person-circle me-2"></i>Profile</Link>
               </li>
               <li className="nav-item p-3 border-bottom"  >
-              <span className="text-reset signInSideMenu" onClick={logoutHandler} >
+              <span className="text-reset signInSideMenu " onClick={logoutHandler} >
                 Sign Out
                 </span>
               </li>

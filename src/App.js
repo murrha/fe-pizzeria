@@ -19,73 +19,63 @@ import MdHeader from "./components/MdHeader";
 import ComingSoon from "./components/ComingSoon";
 import ThankYouContact from "./components/ThankYouContact";
 import Signup from "./components/Signup";
-import { useEffect, useState } from "react";
 import SelectedProduct from "./components/SelectedProduct";
-import axios from "axios";
 import { ShopContextProvider } from "./context/shop-context";
+import { DataContextProvider } from "./context/data-context";
 import { ToastContainer } from "react-toastify";
 import Profile from "./components/user/Profile";
 import PasswordReset from "./components/user/PasswordReset";
 
-// import { useContext } from "react";
-// import { ShopContext } from "./context/shop-context";
+import ChatBot from "./components/chatbot/ChatBot.js";
+
+import Cart from "./components/Cart";
+
+import { getAllMenu } from "./helperFunctions/getMenuData";
 
 function App() {
-  let [foodData, setFoodData] = useState();
-  // const { cartItems } = useContext(ShopContext);
-  // console.log("cartItems at app.js: ", cartItems);
-
-  useEffect(() => {
-    const getAllProducts = async () => {
-      // let resp =  await fetch('./json/products.json');
-      // let data = await resp.json();
-      let data;
-      do {
-        let resp = await axios.get("http://localhost:3002/menu");
-        data = await resp.data;
-      } while (data == null);
-      console.log("data: ", data);
-      setFoodData(data);
-    };
-    getAllProducts();
-  }, []);
+  console.log("getAllMenu() in app.js: ", getAllMenu());
+  const foodData = JSON.parse(window.localStorage.getItem("MENU_DATA"));
+  console.log(">>> foodData in App.js: ", foodData);
 
   return (
-    <div className="container-fluid" id='content'>
-      <ShopContextProvider>
-        <ToastContainer />
-        <Media query={{ maxWidth: 768 }}>
-          {(matches) => (matches ? <MdHeader /> : <Header />)}
-        </Media>
-        <Routes>
-          <Route path="/" element={<Homepage />} />
-          <Route
-            path="/menu"
-            element={<MenuList foodData={foodData} />}
-          ></Route>
-          <Route path="/menu/:searchTerm" element={<SearchResult />}></Route>
-          <Route path="/notfound" element={<NotFound />}></Route>
-          <Route path="about" element={<About />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="faq" element={<FAQ />} />
-          <Route path="location" element={<Location />} />
-          <Route
-            path="menu/item/:id"
-            element={<SelectedProduct foodInfo={foodData} />}
-          />
-          <Route path="terms" element={<TermsPage />} />
-          <Route path="*" element={<PageNotFound />} />
-          <Route path="soon" element={<ComingSoon />} />
-          <Route path="thanks" element={<ThankYouContact />} />
+    <div className="container-fluid">
+      <DataContextProvider>
+        <ShopContextProvider>
+          <ToastContainer />
+          <Media query={{ maxWidth: 768 }}>
+            {(matches) => (matches ? <MdHeader /> : <Header />)}
+          </Media>
+          <ChatBot/>
+          <Routes>
+            <Route path="/" element={<Homepage />} />
+            <Route
+              path="/menu"
+              element={<MenuList foodData={foodData} />}
+            ></Route>
+            <Route path="/menu/:searchTerm" element={<SearchResult />}></Route>
+            <Route path="/notfound" element={<NotFound />}></Route>
+            <Route path="about" element={<About />} />
+            <Route path="contact" element={<Contact />} />
+            <Route path="faq" element={<FAQ />} />
+            <Route path="location" element={<Location />} />
+            <Route
+              path="menu/item/:id"
+              element={<SelectedProduct foodInfo={foodData} />}
+            />
+            <Route path="terms" element={<TermsPage />} />
+            <Route path="*" element={<PageNotFound />} />
+            <Route path="soon" element={<ComingSoon />} />
+            <Route path="thanks" element={<ThankYouContact />} />
 
-          <Route path="/signup" element={<Signup />}></Route>
-
-          <Route path="/profile" element={<Profile/>}></Route>
+            <Route path="/signup" element={<Signup />}></Route>
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/profile" element={<Profile/>}></Route>
           <Route path="/password-reset" element={<PasswordReset/>}></Route>
-        </Routes>
+          </Routes>
 
-        <Footer />
-      </ShopContextProvider>
+          <Footer />
+        </ShopContextProvider>
+      </DataContextProvider>
     </div>
   );
 }

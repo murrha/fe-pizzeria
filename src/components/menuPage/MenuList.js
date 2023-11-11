@@ -1,13 +1,12 @@
 import ProductList from "./ProductList";
 import SearchBar from "./SearchBar";
 import FilterTagBar from "./FilterTagBar";
-import { ShopContext } from "../../context/shop-context";
-import { useContext } from "react";
 import BackToTopButton from "./BackToTopButton";
+const MenuList = (props) => {
+  const { foodData } = props;
+  console.log("props in MenuList.js: ", props);
+  console.log("asdfsd foodData in MenuList.js: ", foodData);
 
-const MenuList = ({ foodData }) => {
-  const { cartItems } = useContext(ShopContext);
-  console.log("cartItems: ", cartItems);
   return (
     <>
     <div>
