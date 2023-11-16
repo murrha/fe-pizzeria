@@ -122,6 +122,9 @@ div.scrollTag{
 #content{
   height: 100vh;
 }
+#notfoundcontent{
+  height:60vh;
+}
 .chatbox{
   position: fixed;
   bottom: 20px;

@@ -4,7 +4,7 @@ const ListFormat = (props) => {
 
   return props.tagArr.map((tag) => {
     return (
-      <div id={tag} key={tag} className="mx-2 mt-4 mb-5">
+      <div className="mx-2 mt-4 mb-5" id={tag}>
         <h3 className="m-2">{tag.toUpperCase()}</h3>
         <div className="scrollMenu">
           {props.foodList
@@ -39,7 +39,8 @@ const ListFormat = (props) => {
         </div>
       </div>
     );
-  });
+  }
+  );
 };
 
 export default ListFormat;
