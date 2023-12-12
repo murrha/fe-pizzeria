@@ -1,7 +1,7 @@
 import ProductList from "./ProductList";
 import SearchBar from "./SearchBar";
 import FilterTagBar from "./FilterTagBar";
-
+import BackToTopButton from "./BackToTopButton";
 const MenuList = (props) => {
   const { foodData } = props;
   console.log("props in MenuList.js: ", props);
@@ -9,11 +9,14 @@ const MenuList = (props) => {
 
   return (
     <>
+    <div>
       {foodData && (
         <SearchBar foodList={foodData} disabled={false} readOnly={false} />
       )}
       {<FilterTagBar />}
       {foodData && <ProductList foodList={foodData} />}
+      </div>
+      <BackToTopButton/>
     </>
   );
 };

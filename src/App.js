@@ -11,7 +11,6 @@ import PageNotFound from "./components/PageNotFound";
 import Homepage from "./components/Homepage";
 import MenuList from "./components/menuPage/MenuList";
 import SearchResult from "./components/menuPage/SearchResult";
-import NotFound from "./components/menuPage/NotFound";
 
 import Media from "react-media";
 import Header from "./components/Header";
@@ -23,6 +22,9 @@ import SelectedProduct from "./components/SelectedProduct";
 import { ShopContextProvider } from "./context/shop-context";
 import { DataContextProvider } from "./context/data-context";
 import { ToastContainer } from "react-toastify";
+import Profile from "./components/user/Profile";
+import PasswordReset from "./components/user/PasswordReset";
+
 import ChatBot from "./components/chatbot/ChatBot.js";
 
 import Cart from "./components/Cart";
@@ -35,7 +37,7 @@ function App() {
   console.log(">>> foodData in App.js: ", foodData);
 
   return (
-    <div className="container-fluid">
+    <div className="container-fluid min-vh-100">
       <DataContextProvider>
         <ShopContextProvider>
           <ToastContainer />
@@ -50,7 +52,7 @@ function App() {
               element={<MenuList foodData={foodData} />}
             ></Route>
             <Route path="/menu/:searchTerm" element={<SearchResult />}></Route>
-            <Route path="/notfound" element={<NotFound />}></Route>
+         
             <Route path="about" element={<About />} />
             <Route path="contact" element={<Contact />} />
             <Route path="faq" element={<FAQ />} />
@@ -66,6 +68,8 @@ function App() {
 
             <Route path="/signup" element={<Signup />}></Route>
             <Route path="/cart" element={<Cart />} />
+            <Route path="/profile" element={<Profile/>}></Route>
+          <Route path="/password-reset" element={<PasswordReset/>}></Route>
           </Routes>
 
           <Footer />

@@ -6,7 +6,7 @@ const NotFound = () => {
         navigate("/menu")
     }
     return ( 
-        <div className="mx-3 mt-4">
+        <div className="mx-3 mt-4" id='notfoundcontent'>
         <h1>Item Not Found!</h1>
         <button className="btn btn-warning mt-3 fw-semibold" onClick={clickHandler}>Menu Listings</button>
         </div>

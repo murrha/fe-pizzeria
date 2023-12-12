@@ -8,22 +8,17 @@ const SearchBar = (props) => {
   let inputHandler = (e) => {
     let searchItem = e.target.value;
     setSearchInput(searchItem);
-  };
-  
-  let searchHandler = () => {
-    let searchFilterArr = props.foodList.filter((food) =>
-      food.name.toLowerCase().includes(searchInput.toLowerCase())
-    );
-
-    if (searchFilterArr.length === 0) {
-      navigate("/notfound");
-    } else {
-      navigate(`/menu/${searchInput.replace(/\s+/g, "-")}`, {
-        state: searchFilterArr,
-      });
-    }
     
   };
+  
+  let searchHandler = (e) => {
+    e.preventDefault()
+    // navigate(`/menu/${searchInput}`)
+    navigate(`/menu/${searchInput.replace(/\s+/g, "-")}`, {
+      state: searchInput,
+    })
+  };
+
   let cancelHandler=()=>{
     navigate("/menu");
   }
@@ -37,7 +32,6 @@ const SearchBar = (props) => {
           className="input-group-text btn btn-danger"
           onClick={searchHandler}
           id="basic-addon1"
-          disabled={props.disabled}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -53,12 +47,10 @@ const SearchBar = (props) => {
         <input
           type="text"
           className="form-control searchInput border-secondary-light rounded-end-2"
-          value={props.value}
           onChange={inputHandler}
           placeholder="Search in Menu"
           aria-label="search"
-          aria-describedby="basic-addon1" readOnly={props.readOnly}
-          required
+          aria-describedby="basic-addon1"
         />
          <button className="btn p-0 cancelBtn" onClick={cancelHandler}>
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-x-circle-fill" viewBox="0 0 16 16">
